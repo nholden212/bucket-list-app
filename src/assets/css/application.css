@@ -1,4 +1,4 @@
-html, body{
+html, body {
   height: 100%;
 }
 
@@ -6,21 +6,31 @@ body {
   background-image: linear-gradient(#d6e3ff, #c3cde2);
 }
 
-.main-container{
+.main-container {
   padding-left: 160px;
+  padding-right: 20px;
   padding-top: 10px;
 }
 
-.navbar{
+.navbar {
   background-image: linear-gradient(#6090f7, #3b70e2);
-}
-
-.nav-link{
-  color: white;
 }
 
 .navbar-fixed-left {
   position: fixed;
   height: 100%;
   width: 140px;
+  align-content: center;
+}
+
+.navbar-toggler-icon {
+  color: #c3cde2;
+}
+
+.nav-link {
+  color: white;
+}
+
+.btn-primary {
+  background-image: linear-gradient(#6090f7, #3b70e2);
 }
