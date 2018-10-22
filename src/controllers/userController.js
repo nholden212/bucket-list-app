@@ -43,6 +43,10 @@ module.exports = {
     });
   },
 
+  renderLogOut(req, res, next){
+    res.render("users/log_out");
+  },
+
   logOut(req, res, next){
     req.logout();
     req.flash("notice", "You are now logged out.");

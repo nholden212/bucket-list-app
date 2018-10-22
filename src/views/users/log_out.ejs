@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+    <main class="main-container">
+
+      <% include ../static/partials/messages.ejs %>
+
+      <h4>Are you sure you want to log out?</h4>
+
+      <form action="/users/log_out" method="post">
+        <button type="submit" class="btn btn-primary">Log out</button>
+      </form>
+
+    </main>
+
+    <% include ../static/partials/baseScripts.ejs %>
+
+  </body>
+</html>
