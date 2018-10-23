@@ -3,8 +3,6 @@ const BucketItem = require("./models").BucketItem;
 module.exports = {
 
   createItem(newItem, callback){
-    console.log("newItem is " + newItem);
-    console.log("BucketItem is " + BucketItem);
     return BucketItem.create({
       title: newItem.title,
       description: newItem.description,
