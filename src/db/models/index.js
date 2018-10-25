@@ -8,7 +8,7 @@ var env       = process.env.NODE_ENV || 'development';
 // var config    = require(__dirname + '/../config/config.json')["development"];
 const configPath = path.join(__dirname, "..", "config", "config.json");
 const configObj = require(configPath);
-const config = configObj["development"];
+const config = configObj[env];
 var db        = {};
 
 if (config.use_env_variable) {
