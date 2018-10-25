@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+    <main class="main-container">
+      <% include ../static/partials/messages.ejs %>
+      <h1 class="page-title"><%= currentUser.username %></h1>
+      <ul class="list-group">
+        <% items.forEach((item) => { %>
+          <li class="list-group-item">
+            <div class="container">
+              <h6><%= item.title %></h6>
+              <p><%= item.description %></p>
+              <% if(item.location){ %>
+                <p>Location: <%= item.location %></p>
+              <% } %>
+              <p>Type: <%= item.type %></p>
+              <p>Complete: <%= item.complete %></p>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+      <% include ../static/partials/newItem.ejs %>
+    </main>
+    <% include ../static/partials/baseScripts.ejs %>
+  </body>
+</html>

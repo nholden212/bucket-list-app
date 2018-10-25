@@ -17,6 +17,18 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  getAllBucketItemsByUser(user, callback){
+    return BucketItem.findAll({
+      where: { userId: user.id }
+    })
+    .then((items) => {
+      callback(null, items);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
 
 }

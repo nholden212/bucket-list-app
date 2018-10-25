@@ -1,4 +1,5 @@
 const userQueries = require("../db/queries.users.js");
+const bucketItemQueries = require("../db/queries.bucketItems.js");
 const passport = require("passport");
 
 module.exports = {
@@ -51,6 +52,17 @@ module.exports = {
     req.logout();
     req.flash("notice", "You are now logged out.");
     res.redirect("/");
+  },
+
+  renderProfile(req, res, next){
+    bucketItemQueries.getAllBucketItemsByUser(req.user, (err, items) => {
+      if(err){
+        res.redirect(500, "/");
+      } else {
+        console.log("HEY items is " + items);
+        res.render("users/profile", {items});
+      }
+    })
   }
 
 }
