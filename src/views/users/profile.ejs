@@ -19,6 +19,7 @@
               <% } %>
               <p>Type: <%= item.type %></p>
               <p>Complete: <%= item.complete %></p>
+              <a href="/bucketItems/<%= item.id %>/edit" class="btn btn-primary">Edit</a>
             </div>
           </li>
         <% }) %>
