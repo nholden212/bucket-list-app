@@ -55,6 +55,17 @@ module.exports = {
         res.redirect("/users/profile");
       }
     })
+  },
+
+  deleteBucketItem(req, res, next){
+    bucketItemQueries.deleteBucketItem(req, (err, item) => {
+      if(err){
+        req.flash("notice", "There was a problem deleting this item.");
+        res.redirect(500, "/users/profile");
+      } else {
+        res.redirect(303, "/users/profile");
+      }
+    })
   }
 
 }
