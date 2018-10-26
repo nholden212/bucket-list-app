@@ -80,6 +80,19 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  deleteBucketItem(req, callback){
+    return BucketItem.findById(req.params.id)
+    .then((item) => {
+      item.destroy()
+      .then(() => {
+        callback(null, item);
+      });
+    })
+    .catch((err) => {
+      callback(err);
+    });
   }
 
 }

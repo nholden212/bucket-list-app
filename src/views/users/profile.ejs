@@ -25,6 +25,7 @@
               <% } else { %>
                 <a href="/bucketItems/<%= item.id %>/toggleComplete" class="btn btn-primary">Mark item as incomplete</a>
               <% } %>
+              <a href="/bucketItems/<%= item.id %>/deleteBucketItem" class="btn btn-danger">Delete item</a>
             </div>
           </li>
         <% }) %>
