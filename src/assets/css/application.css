@@ -31,6 +31,31 @@ body {
   color: white;
 }
 
+#new-item-button {
+  float: right;
+}
+
 .btn-primary {
   background-image: linear-gradient(#6090f7, #3b70e2);
+}
+
+.bucket-item {
+  background-color: #ffffcc;
+}
+
+.bucket-item-complete {
+  background-color: #adebad;
+}
+
+.item-type {
+  font-style: italic;
+}
+
+.material-icons {
+  color: black;
+  padding: 3px;
+}
+
+.material-icons:hover {
+  color: blue;
 }

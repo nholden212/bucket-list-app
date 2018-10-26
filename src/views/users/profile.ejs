@@ -6,27 +6,48 @@
   <body>
     <% include ../static/partials/navbar.ejs %>
     <main class="main-container">
+
       <% include ../static/partials/messages.ejs %>
+
       <h1 class="page-title"><%= currentUser.username %></h1>
+
       <ul class="list-group">
         <% items.forEach((item) => { %>
-          <li class="list-group-item">
+
+          <% if(item.complete){ %>
+            <li class="list-group-item bucket-item-complete">
+          <% } else { %>
+            <li class="list-group-item bucket-item"}>
+          <% } %>
+
             <div class="container">
-              <h6><%= item.title %></h6>
+              <h5><%= item.title %></h5>
+
+              <% if(item.type === "lifeExperience") { %>
+                  <p class="item-type">Life Experience</p>
+                <% } else if(item.type === "localAttraction") { %>
+                  <p class="item-type">Local Attraction</p>
+                <% } else if(item.type === "travelDestination") { %>
+                  <p class="item-type">Travel Destination</p>
+                <% } %>
+
               <p><%= item.description %></p>
+
               <% if(item.location){ %>
                 <p>Location: <%= item.location %></p>
               <% } %>
-              <p>Type: <%= item.type %></p>
-              <p>Complete: <%= item.complete %></p>
-              <a href="/bucketItems/<%= item.id %>/edit" class="btn btn-primary">Edit</a>
+
+              <a href="/bucketItems/<%= item.id %>/edit"><i class="material-icons">create</i></a>
+              <a href="/bucketItems/<%= item.id %>/deleteBucketItem"><i class="material-icons">delete</i></a>
+
               <% if(!item.complete) { %>
-                <a href="/bucketItems/<%= item.id %>/toggleComplete" class="btn btn-primary">Mark item as complete</a>
+                <a href="/bucketItems/<%= item.id %>/toggleComplete"><i class="material-icons">done</i></a>
               <% } else { %>
-                <a href="/bucketItems/<%= item.id %>/toggleComplete" class="btn btn-primary">Mark item as incomplete</a>
+                <a href="/bucketItems/<%= item.id %>/toggleComplete"><i class="material-icons">clear</i></a>
               <% } %>
-              <a href="/bucketItems/<%= item.id %>/deleteBucketItem" class="btn btn-danger">Delete item</a>
+
             </div>
+
           </li>
         <% }) %>
       </ul>
