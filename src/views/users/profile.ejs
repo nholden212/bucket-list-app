@@ -20,6 +20,11 @@
               <p>Type: <%= item.type %></p>
               <p>Complete: <%= item.complete %></p>
               <a href="/bucketItems/<%= item.id %>/edit" class="btn btn-primary">Edit</a>
+              <% if(!item.complete) { %>
+                <a href="/bucketItems/<%= item.id %>/toggleComplete" class="btn btn-primary">Mark item as complete</a>
+              <% } else { %>
+                <a href="/bucketItems/<%= item.id %>/toggleComplete" class="btn btn-primary">Mark item as incomplete</a>
+              <% } %>
             </div>
           </li>
         <% }) %>
