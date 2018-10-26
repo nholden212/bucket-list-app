@@ -45,6 +45,16 @@ module.exports = {
         res.redirect("/users/profile");
       }
     })
+  },
+
+  toggleComplete(req, res, next){
+    bucketItemQueries.toggleComplete(req.params.id, (err, item) => {
+      if(err || item === null){
+        req.flash("notice", "There was a problem marking this item complete.");
+      } else {
+        res.redirect("/users/profile");
+      }
+    })
   }
 
 }

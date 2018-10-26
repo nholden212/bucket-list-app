@@ -37,6 +37,27 @@ module.exports = {
     })
   },
 
+  toggleComplete(id, callback){
+    return BucketItem.findOne({
+      where: { id: id }
+    })
+    .then((item) => {
+      if(!item.complete){
+        item.update({
+          complete: true
+        });
+      } else {
+        item.update({
+          complete: false
+        });
+      }
+      callback(null, item);
+    })
+    .catch((err) => {
+      callback(err);
+    })
+  },
+
   getBucketItem(id, callback){
     return BucketItem.findOne({
       where: { id: id }
