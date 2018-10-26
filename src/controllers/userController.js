@@ -59,7 +59,6 @@ module.exports = {
       if(err){
         res.redirect(500, "/");
       } else {
-        console.log("HEY items is " + items);
         res.render("users/profile", {items});
       }
     })

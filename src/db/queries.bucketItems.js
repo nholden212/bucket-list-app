@@ -19,6 +19,36 @@ module.exports = {
     })
   },
 
+  updateBucketItem(req, updatedItem, callback){
+    return BucketItem.findById(req.params.id)
+    .then((item) => {
+      if(!item){
+        return callback("Item not found.");
+      }
+      item.update(updatedItem, {
+        fields: Object.keys(updatedItem)
+      })
+      .then(() => {
+        callback(null, item);
+      })
+      .catch((err) => {
+        callback(err);
+      })
+    })
+  },
+
+  getBucketItem(id, callback){
+    return BucketItem.findOne({
+      where: { id: id }
+    })
+    .then((item) => {
+      callback(null, item);
+    })
+    .catch((err) => {
+      callback(err);
+    })
+  },
+
   getAllBucketItemsByUser(user, callback){
     return BucketItem.findAll({
       where: { userId: user.id }
