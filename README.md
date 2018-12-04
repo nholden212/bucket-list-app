@@ -2,7 +2,7 @@
 
 This is a simple app which allows users to create a bucket list. Written in Node.js on a Postgres database, it follows a simple MVC architectural framework. The goal of this app is to help users keep track of all the things they want to do but have never make time for. Users can perform basic CRUD operations for items within their list, as well as toggle each item as complete or incomplete. Items can also be tagged as either a life experience, a travel destination, or a local attraction.
 
-This app is deployed and live. Click [here]() to check out Bucket List!
+This app is deployed and live. Click [here](https://nholden212-bucket-list.herokuapp.com/) to check out Bucket List!
 
 ### Built With
 
