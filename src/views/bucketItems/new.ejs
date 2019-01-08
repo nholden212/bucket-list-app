@@ -30,9 +30,20 @@
 
         <div class="form-group">
           <label for="type">What is this item?</label>
-          <input type="radio" class="form-control" name="type" value="lifeExperience">Life Experience
-          <input type="radio" class="form-control" name="type" value="localAttraction">Local Attraction
-          <input type="radio" class="form-control" name="type" value="travelDestination">Travel Destination
+          <div class="flex-container">
+            <div class="flex-container-radio">
+                <label for="lifeExperience">Life Experience</label>
+                <input type="radio" class="form-control" name="type" value="lifeExperience" id="lifeExperience">
+              </div>
+              <div class="flex-container-radio">
+                <label for="localAttraction">Local Attraction</label>
+                <input type="radio" class="form-control" name="type" value="localAttraction" id="localAttraction">
+              </div>
+              <div class="flex-container-radio">
+                <label for="travelDestination">Travel Destination</label>
+                <input type="radio" class="form-control" name="type" value="travelDestination" id="travelDestination">
+              </div>
+          </div>
           <small>Item type is required</small>
         </div>
 
