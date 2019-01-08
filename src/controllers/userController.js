@@ -39,7 +39,7 @@ module.exports = {
         res.redirect("/users/log_in");
       } else {
         req.flash("notice", "Login successful!");
-        res.redirect("/");
+        res.redirect("/users/profile");
       }
     });
   },
