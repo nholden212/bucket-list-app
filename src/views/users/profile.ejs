@@ -4,12 +4,17 @@
     <% include ../static/partials/head.ejs %>
   </head>
   <body>
+    
     <% include ../static/partials/navbar.ejs %>
-    <main class="main-container">
+    
+    <div class="list-header">
+        <h1 class="page-title"><%= currentUser.username %></h1>
+        <% include ../static/partials/newItem.ejs %>
+    </div>
+
+    <main class="main-container dropped">
 
       <% include ../static/partials/messages.ejs %>
-
-      <h1 class="page-title"><%= currentUser.username %></h1>
 
       <ul class="list-group">
         <% items.forEach((item) => { %>
@@ -51,7 +56,6 @@
           </li>
         <% }) %>
       </ul>
-      <% include ../static/partials/newItem.ejs %>
     </main>
     <% include ../static/partials/baseScripts.ejs %>
   </body>

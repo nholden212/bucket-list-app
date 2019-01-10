@@ -10,10 +10,13 @@ body {
   padding-left: 160px;
   padding-right: 20px;
   padding-top: 10px;
+  z-index: 0;
+  position: relative;
 }
 
 .navbar {
   background-image: linear-gradient(#6090f7, #3b70e2);
+  z-index: 2;
 }
 
 .navbar-fixed-left {
@@ -36,7 +39,7 @@ body {
 }
 
 .btn-primary {
-  background-image: linear-gradient(#6090f7, #3b70e2);
+  background-image: linear-gradient(#85a9f7, #5c86e0);
 }
 
 .bucket-item {
@@ -74,4 +77,21 @@ body {
   padding: 15px;
   margin: 5px;
   border-radius: 10%;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 150px;
+  padding-right: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(#6090f7, #3b70e2);
+  z-index: 1;
+}
+
+.dropped {
+  padding-top: 70px;
 }
