@@ -15,38 +15,44 @@
         <% items.forEach((item) => { %>
 
           <% if(item.complete){ %>
-            <li class="list-group-item bucket-item-complete">
+            <li class="list-group-item bucket-item complete">
           <% } else { %>
             <li class="list-group-item bucket-item"}>
           <% } %>
 
-            <div class="container">
-              <h5><%= item.title %></h5>
+            <div class="bucket-item-container">
+              
+              <h5 class="item-title"><%= item.title %></h5>
 
-              <% if(item.type === "lifeExperience") { %>
-                  <p class="item-type">Life Experience</p>
+              <div class="item-type">
+                <% if(item.type === "lifeExperience") { %>
+                  <p>Life Experience</p>
                 <% } else if(item.type === "localAttraction") { %>
-                  <p class="item-type">Local Attraction</p>
+                  <p>Local Attraction</p>
                 <% } else if(item.type === "travelDestination") { %>
-                  <p class="item-type">Travel Destination</p>
+                  <p>Travel Destination</p>
                 <% } %>
+              </div>
 
-              <p><%= item.description %></p>
-
-              <% if(item.location){ %>
-                <p>Location: <%= item.location %></p>
-              <% } %>
-
-              <a href="/bucketItems/<%= item.id %>/edit"><i class="material-icons">create</i></a>
-              <a href="/bucketItems/<%= item.id %>/deleteBucketItem"><i class="material-icons">delete</i></a>
-
-              <% if(!item.complete) { %>
-                <a href="/bucketItems/<%= item.id %>/toggleComplete"><i class="material-icons">done</i></a>
-              <% } else { %>
-                <a href="/bucketItems/<%= item.id %>/toggleComplete"><i class="material-icons">clear</i></a>
-              <% } %>
-
+              <div class="item-location">
+                <% if(item.location){ %>
+                  <p>Location: <%= item.location %></p>
+                <% } %>
+              </div>
+            
+              <div class="item-icons">
+                <a href="/bucketItems/<%= item.id %>/edit"><i class="material-icons">create</i></a>
+                <a href="/bucketItems/<%= item.id %>/deleteBucketItem"><i class="material-icons">delete</i></a>
+                <% if(!item.complete) { %>
+                  <a href="/bucketItems/<%= item.id %>/toggleComplete"><i class="material-icons">done</i></a>
+                <% } else { %>
+                  <a href="/bucketItems/<%= item.id %>/toggleComplete"><i class="material-icons">clear</i></a>
+                <% } %>
+              </div>
+              
             </div>
+
+            <p><%= item.description %></p>
 
           </li>
         <% }) %>
