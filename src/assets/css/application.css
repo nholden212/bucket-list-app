@@ -46,12 +46,29 @@ body {
   background-color: #ffffcc;
 }
 
-.bucket-item-complete {
+.complete {
   background-color: #adebad;
+}
+
+.bucket-item-container {
+  display: flex;
+}
+
+.item-title {
+  width: 30%;
 }
 
 .item-type {
   font-style: italic;
+  width: 20%;
+}
+
+.item-location {
+  width: 40%;
+}
+
+.item-icons {
+  width: 10%;
 }
 
 .material-icons {
