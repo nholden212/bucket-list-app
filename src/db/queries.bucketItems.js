@@ -93,6 +93,19 @@ module.exports = {
     .catch((err) => {
       callback(err);
     });
+  },
+
+  getItemsByUserAZ(user, callback){
+    return BucketItem.findAll({
+      where: { userId: user.id },
+      order: [['title', 'ASC']]
+    })
+    .then((items) => {
+      callback(null, items);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
 
 }

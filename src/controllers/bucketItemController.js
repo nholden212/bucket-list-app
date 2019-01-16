@@ -66,6 +66,16 @@ module.exports = {
         res.redirect(303, "/users/profile");
       }
     })
+  },
+
+  sortItemsAZ(req, res, next){
+    bucketItemQueries.getItemsByUserAZ(req.user, (err, items) => {
+      if(err){
+        res.redirect(500, "/");
+      } else {
+        res.render("users/profile", {items});
+      }
+    })
   }
 
 }
