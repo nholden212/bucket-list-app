@@ -8,6 +8,7 @@ router.get("/bucketItems/:id/toggleComplete", bucketItemController.toggleComplet
 router.get("/bucketItems/:id/deleteBucketItem", bucketItemController.deleteBucketItem);
 
 router.get("/bucketItems/sortItemsAZ", bucketItemController.sortItemsAZ);
+router.get("/bucketItems/sortItemsMostRecent", bucketItemController.sortItemsMostRecent);
 
 router.post("/bucketItems/createBucketItem", bucketItemController.createBucketItem);
 router.post("/bucketItems/:id/updateBucketItem", bucketItemController.updateBucketItem);

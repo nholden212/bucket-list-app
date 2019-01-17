@@ -76,6 +76,16 @@ module.exports = {
         res.render("users/profile", {items});
       }
     })
+  },
+
+  sortItemsMostRecent(req, res, next){
+    bucketItemQueries.getItemsByUserDateAdded(req.user, (err, items) => {
+      if(err){
+        res.redirect(500, "/");
+      } else {
+        res.render("users/profile", {items});
+      }
+    })
   }
 
 }

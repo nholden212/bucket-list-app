@@ -106,6 +106,19 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  getItemsByUserDateAdded(user, callback){
+    return BucketItem.findAll({
+      where: { userId: user.id },
+      order: [['createdAt', 'DESC']]
+    })
+    .then((items) => {
+      callback(null, items);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
 
 }

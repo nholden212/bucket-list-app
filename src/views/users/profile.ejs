@@ -16,7 +16,8 @@
 
       <% include ../static/partials/messages.ejs %>
 
-      <a href="/bucketItems/sortItemsAZ">Sort Items A-Z</a>
+      <a class="sort-button" href="/bucketItems/sortItemsAZ">Sort Items: A-Z</a>
+      <a class="sort-button" href="/bucketItems/sortItemsMostRecent">Sort Items: Recently Created</a>
 
       <ul class="list-group">
         <% items.forEach((item) => { %>
